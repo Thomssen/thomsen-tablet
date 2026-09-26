@@ -1,0 +1,23 @@
+[workspace]
+resolver = "2"
+members = [
+    "src-tauri",
+    "crates/thomsen-tablet-core",
+    "crates/thomsen-tablet-devices",
+    "crates/thomsen-tablet-input",
+]
+
+# Shared metadata for the driver crates (not the Tauri app, which keeps its
+# own [package] in src-tauri/Cargo.toml since the Tauri CLI expects that).
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Thomsen"]
+license = "MIT"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

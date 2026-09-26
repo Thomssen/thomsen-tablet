@@ -1,0 +1,23 @@
+[package]
+name = "thomsen-tablet-devices"
+description = "USB/HID tablet discovery, tablet definitions, and raw report parsing"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tracing = "0.1"
+
+# `windows-native` talks to hid.dll directly on Windows - no bundled/external
+# hidapi C library to ship or install.
+[dependencies.hidapi]
+version = "2"
+default-features = false
+features = ["windows-native"]
+
+[dev-dependencies]
+tracing-subscriber = "0.3"

@@ -1,0 +1,38 @@
+.monitor-layout {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.monitor-layout--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: var(--text-faint);
+  font-size: 12px;
+}
+
+.monitor-layout__monitor {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  color: var(--text-faint);
+  font-size: 12px;
+  font-weight: 600;
+  transition: background-color var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+.monitor-layout__monitor:hover {
+  background: var(--surface-3);
+  color: var(--text-secondary);
+}
+.monitor-layout__monitor.is-selected {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--text);
+}

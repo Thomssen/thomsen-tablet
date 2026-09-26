@@ -1,0 +1,130 @@
+.tablet-area__layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.tablet-area__side {
+  flex: 1;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.tablet-area__fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+.tablet-area__row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tablet-area__quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tablet-area__quick-label {
+  font-size: 11.5px;
+  color: var(--text-faint);
+}
+
+.tablet-area__rule {
+  margin: 16px 0;
+}
+
+.tablet-area__presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tablet-area__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding-inline: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--field-bg);
+  border: 1px solid var(--border);
+  font-size: 11.5px;
+  color: var(--text-secondary);
+}
+.tablet-area__chip button {
+  color: var(--text-faint);
+}
+.tablet-area__chip button:hover {
+  color: var(--bad);
+}
+
+.tablet-area__preset-apply {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.tablet-area__preset-apply:hover {
+  color: var(--text);
+}
+
+.tablet-area__import-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.tablet-area__import-preview {
+  margin-top: 14px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .tablet-area__layout {
+    flex-direction: column;
+  }
+}
+
+.tablet-area__info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 900px) {
+  .tablet-area__info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .tablet-area__info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tablet-area__info-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tablet-area__info-label {
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tablet-area__info-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}

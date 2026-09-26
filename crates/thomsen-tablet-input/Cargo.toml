@@ -1,0 +1,33 @@
+[package]
+name = "thomsen-tablet-input"
+description = "Wires device reports through core's coordinate mapping toward pointer output"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+thiserror = "2"
+tracing = "0.1"
+thomsen-tablet-core = { path = "../thomsen-tablet-core" }
+thomsen-tablet-devices = { path = "../thomsen-tablet-devices" }
+
+# Only needed to name `hidapi::HidDevice`, the type `devices::hid::open_by_path`
+# returns - all actual HID access stays in thomsen-tablet-devices.
+[dependencies.hidapi]
+version = "2"
+default-features = false
+features = ["windows-native"]
+
+# Real cursor/click output (see src/pointer.rs) - the only place in the
+# whole workspace that touches the user's actual mouse cursor.
+[dependencies.windows]
+version = "0.61"
+features = [
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Foundation",
+    "Win32_System_Threading",
+    "Win32_System_Diagnostics_ToolHelp",
+]

@@ -1,0 +1,33 @@
+.area-editor {
+  position: relative;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background-image: radial-gradient(circle at center, var(--border-strong) 1px, transparent 1.5px);
+  background-size: 16px 16px;
+  touch-action: none;
+  user-select: none;
+}
+
+.area-editor__value {
+  position: absolute;
+  background: var(--accent-soft);
+  border: 1.5px solid var(--accent);
+  border-radius: 4px;
+  cursor: move;
+  box-shadow: var(--shadow-sm);
+}
+
+.area-editor__handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--btn-primary-bg);
+  border: 2px solid var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+.area-editor__handle:hover {
+  background: var(--btn-primary-bg-hover);
+  box-shadow: var(--shadow-md);
+}

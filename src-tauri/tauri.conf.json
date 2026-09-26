@@ -1,0 +1,51 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Thomsen Tablet",
+  "version": "0.1.0",
+  "identifier": "dev.thomssen.tablet",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1430",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Thomsen Tablet",
+        "label": "main",
+        "width": 1320,
+        "height": 860,
+        "minWidth": 1040,
+        "minHeight": 700,
+        "resizable": true,
+        "maximizable": true,
+        "fullscreen": false,
+        "decorations": false,
+        "transparent": false,
+        "shadow": true,
+        "center": true,
+        "visible": false
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' data: asset: http://asset.localhost; style-src 'self' 'unsafe-inline'; font-src 'self' data:; frame-src 'self'; connect-src 'self' ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "Thomsen",
+    "copyright": "Copyright (c) 2026 Thomsen",
+    "category": "Utility",
+    "shortDescription": "A standalone tablet driver built for osu! players.",
+    "longDescription": "Thomsen Tablet is a standalone Windows tablet driver, built especially for osu! players. It talks to supported tablets directly over HID - no OpenTabletDriver or other driver software required.",
+    "icon": ["icons/32x32.png", "icons/64x64.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "installerHooks": "./windows/hooks.nsh"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+[package]
+name = "thomsen-tablet-core"
+description = "Tablet abstraction, coordinate mapping, profiles and filters - no hardware or UI code"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+uuid = { version = "1", features = ["v4"] }

@@ -1,0 +1,42 @@
+[package]
+name = "thomsen-tablet"
+version = "0.1.0"
+description = "Thomsen Tablet - a standalone tablet driver for osu! players"
+authors = ["Thomsen"]
+edition = "2021"
+rust-version = "1.77.2"
+
+# App logic lives in a library crate with a thin `main.rs` so the modules stay
+# testable and the layout matches the Tauri v2 template.
+[lib]
+name = "thomsen_tablet_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+tauri-plugin-autostart = "2"
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+uuid = { version = "1", features = ["v4"] }
+
+# Logging: structured, non-blocking, written to Thomsen Tablet's own data dir.
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-appender = "0.2"
+
+# The driver stack. The UI crate (this one) only orchestrates these - it
+# contains no HID/USB/report-parsing logic of its own.
+thomsen-tablet-core = { path = "../crates/thomsen-tablet-core" }
+thomsen-tablet-devices = { path = "../crates/thomsen-tablet-devices" }
+thomsen-tablet-input = { path = "../crates/thomsen-tablet-input" }
+
+[features]
+# Used by the Tauri CLI for production builds.
+custom-protocol = ["tauri/custom-protocol"]

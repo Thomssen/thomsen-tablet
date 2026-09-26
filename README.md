@@ -1,6 +1,6 @@
 # Thomsen Tablet
 
-A standalone tablet driver for Windows, built especially for osu! players. Same visual family as [Thomsen OSINT](../Thomsen%20OSINT) - dark, minimal, premium.
+A standalone tablet driver for Windows, built especially for osu! players. Same visual family as [Thomsen VM](../Thomsen%20OSINT](https://github.com/Thomssen/Thomsen-VM)) - dark, minimal, premium.
 
 **Thomsen Tablet talks to supported tablets' hardware directly.** It does not require OpenTabletDriver, Wacom's official driver, or any other driver software to be installed - install Thomsen Tablet and it's the only thing you need. See [NOTICE.md](NOTICE.md) for exactly what hardware-protocol references informed this (and their licenses/attribution) - understanding how a protocol works is not the same as reusing another project's driver, and that file documents the difference carefully.
 
